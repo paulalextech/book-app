@@ -4,66 +4,68 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 const books = [
 	{
-		author: 'James Clear',
-		title: 'Atomic Habits: the life-changing million-copy',
-		img: 'https://images-eu.ssl-images-amazon.com/images/I/91bYsX41DVL._AC_UL600_SR600,400_.jpg',
+		author: 'Gene Kranz',
+		title:
+			'Failure is Not an Option: Mission Control from Mercury to Apollo 13 and beyond',
+		img: 'https://m.media-amazon.com/images/I/91MSzpKOeiL._SY425_.jpg',
 		id: 1,
 	},
 
 	{
-		author: 'Julie Smith',
-		title: 'Why Has Nobody Told Me This Before?',
-		img: 'https://m.media-amazon.com/images/I/61vdz+IbbKL._SY466_.jpg',
+		author: 'Annie-Sophie Baumann',
+		title: 'The Ultimate Book of Space: 3',
+		img: 'https://m.media-amazon.com/images/I/61HIaJNc+UL._SY425_.jpg',
 		id: 2,
 	},
 	{
-		author: 'Richard Osman',
-		title: 'The Last Devil To Die: The Thursday Murder Club 4',
-		img: 'https://m.media-amazon.com/images/I/71Ja+kWW-DL._SY425_.jpg',
+		author: 'Roger Wein',
+		title:
+			'Red Rover: Inside the Story of Robotic Space Exploration, from Genesis to the Mars Rover Curiosity',
+		img: 'https://m.media-amazon.com/images/I/61VJvQk+D2L._SY425_.jpg',
 		id: 3,
 	},
 	{
-		author: 'GT Karber',
-		title: 'Murdle:Solve 100 Devilishly Devious Murder Mystery Logic Puzzles ',
-		img: 'https://m.media-amazon.com/images/I/71ImfTaemnL._SY425_.jpg',
+		author: 'Neil Degrasse Tyson',
+		title: 'Cosmic Queries',
+		img: 'https://m.media-amazon.com/images/I/51r46e2cZBL._SY445_SX342_.jpg',
 		id: 4,
 	},
 	{
-		author: 'Sassy Quotes Press',
+		author: 'The Future of Humanity',
 		title:
-			'Fuck It 2024 Planner: Funny Weekly Organizer with Over 100 Sweary Affirmations and Badass Quotations',
-		img: 'https://m.media-amazon.com/images/I/61qxhMYr-CL._SY425_.jpg',
+			'Terraforming Mars, Interstellar Travel, Immortality, and Our Destiny Beyond Earth',
+		img: 'https://m.media-amazon.com/images/I/81goZnqGdXL._SY425_.jpg',
 		id: 5,
 	},
 	{
-		author: 'Rebecca Yarros',
-		title: 'Fourth Wing',
-		img: 'https://m.media-amazon.com/images/I/91xBRNN9AuL._SY425_.jpg',
+		author: 'Leonard David',
+		title: 'Mission to Mars',
+		img: 'https://m.media-amazon.com/images/I/41f44e2i92L._SY445_SX342_.jpg',
 		id: 6,
 	},
 ];
 
 const BookList = () => {
+	const theValue = 'shakeAndBake';
+	const displayValue = () => {
+		console.log(theValue);
+	};
 	return (
 		<section className="booklist">
 			{books.map((book) => {
-				return <Book {...book} key={book.id} />;
+				return <Book {...book} key={book.id} displayValue={displayValue} />;
 			})}
 		</section>
 	);
 };
 
 const Book = (props) => {
-	const { img, title, author } = props;
-
-	const displayTitle = () => {
-		console.log(title);
-	};
+	const { img, title, author, displayValue } = props;
 	return (
 		<article className="book">
 			<img src={img} alt={title} />
 			<h2>{title}</h2>
-			<button onClick={displayTitle}>display title</button>
+			<button onClick={displayValue}>click me</button>
 			<h4>{author.toUpperCase()}</h4>
 		</article>
 	);
