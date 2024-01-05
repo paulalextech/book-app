@@ -30,6 +30,7 @@ body {
 	border-radius: 1rem;
 	padding: 2rem;
 	text-align: center;
+	position: relative;
 }
 
 .book img {
@@ -63,4 +64,18 @@ body {
 	border-bottom-right-radius: 1rem;
 	background: #ff914d;
 	color: #fff;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 2rem;
+	text-transform: uppercase;
+	color: #e89b20;
+	/* background: #ff914d; */
+}
+
+p {
+	text-align: center;
+	margin-top: 0.5rem;
+	color: rgb(0, 0, 0);
 }
